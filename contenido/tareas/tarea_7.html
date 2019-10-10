@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarea 7 - Proyecto Lenguajes de Programación</title>
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Proyecto de Lenguajes de Programación: <span class="sub">Tareas</span></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="../../index.html">Inicio</a></li>
+            <li><a class="nav-item" href="../../personal.html">Paginas personales</a></li>
+            <li><a class="activo nav-item" href="#">Tareas</a></li>
+        </ul>
+    </nav>
+    <aside id="izq">
+        <ul id="lista">
+            <li>
+                <li><a id="aparece1" onclick="aparecer('tareas-1','aparece1')" href="#">[+] Tareas Medio Curso</a></li>
+                <ul class="tareas" id="tareas-1">
+                    <li><a href="tarea_1.html">Tarea 1: Paradigmas de programación</a></li>
+                    <li><a href="tarea_2.html">Tarea 2: Lenguajes de programación</a></li>
+                    <li><a href="tarea_3.html">Tarea 3: Lenguaje Prolog</a></li>
+                    <li><a href="tarea_4.html">Tarea 4: Lenguaje Python</a></li>
+                    <li><a href="tarea_5.html">Tarea 5: Lenguaje Scheme</a></li>
+                    <li><a href="tarea_6.html">Tarea 6: Lenguaje Haskell</a></li>
+                    <li><a href="tarea_7.html">Tarea 7: Lenguaje R</a></li>
+                </ul>
+            </li>
+            <li>
+                <li><a id="aparece2" href="#" onclick="aparecer('tareas-2','aparece2')" class="aparecedor">[+] Tareas Ordinario</a></li>
+                <ul class="tareas" id="tareas-2">
+                    <li><a href="tarea_8.html">Tarea 8</a></li>
+                    <li><a href="tarea_9.html">Tarea 9</a></li>
+                    <li><a href="tarea_10.html">Tarea 10</a></li>
+                    <li><a href="tarea_11.html">Tarea 11</a></li>
+                    <li><a href="tarea_12.html">Tarea 12</a></li>
+                    <li><a href="tarea_13.html">Tarea 13</a></li>
+                    <li><a href="tarea_14.html">Tarea 14</a></li>
+                    <li><a href="tarea_15.html">Tarea 15</a></li>
+                    <li><a href="tarea_16.html">Tarea 16</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <article>
+        <section class="izq">
+            <a href="tarea_6.html">Ir a tarea 6</a>
+        </section>
+        <section class="der">
+            <a href="tarea_8.html">Ir a tarea 8</a>
+        </section>
+        <h1>Lenguaje R</h1>
+        <p>R es un lenguaje y entorno de programación para análisis estadístico y gráfico. Es un dialecto libre del lenguaje S, desarrollado por Robert Gentleman y Ross Ihaka del Departamento de Estadística de la Universidad de Auckland en 1993.</p>
+        <h2>Ventajas del lenguaje R</h2>
+        <ul>
+            <li>Proporciona un amplio numero de herramientas para estadísticas.</li>
+            <li>Permite generar gŕaficos de alta calidad usando sus funciones de fraficación.</li>
+            <li>Se puede usar tanto como herramienta de cálculo numérico y a la vez ser útil para la minería de datos.</li>
+        </ul>
+        <p>Información extraída de: <a href="https://www.genbeta.com/desarrollo/r-un-lenguaje-y-entorno-de-programacion-para-analisis-estadistico">https://www.genbeta.com/desarrollo/r-un-lenguaje-y-entorno-de-programacion-para-analisis-estadistico</a></p>
+        <h2>Variables y tipos de datos</h2>
+        <p>R soporta tres tipos básicos de datos: Numericos, caracteres, cadenas de caracteres y boleanos. Estos datos se pueden almacenar en variables.</p>
+        <h3>Asignación de variables</h2>
+        <p>Para asignar variables se utiliza la siguiente sixtaxis:</p>
+        <pre>
+a <- 4.6
+b <- "Hola"
+c <- TRUE
+        </pre>
+        <h3>Vectores y matrices</h3>
+        <p>Son dos de los tipos de datos compuestos que soporta R. </p>
+        <ul>
+            <li>
+                Vectores: Un vector es una concatenación de una colección de datos del mismo tipo. Cada dato 
+                recibe un índice según el orden en el que se concatenó (comenzando por 1). Para crear un vector 
+                usamos la función c(). Para crear un vector que consista en una serie de número consecutivos se utiliza el operador :. 
+            </li>
+            <pre>
+datos.consecutivos <- 1:10
+datos <- c(2,1,3,-1,10,0,0,1)
+            </pre>
+            <p>
+                Podemos acceder a un dato utilizando su índice. Para acceder a un subconjunto de datos de un 
+                vector podemos utilizar otro vector con los índices correspondientes. Por último, podemos 
+                acceder a un subconjunto de datos de un vector utilizando un vector lógico. En este caso, se 
+                devolverán los datos que corresponden a TRUE en el vector lógico correspondiente. Por ejemplo:
+            </p>
+            <pre>
+datos[1]
+datos[c(1,3,5)]
+datos > 1
+datos[datos > 1]        
+            </pre>
+            <li>
+                Matrices: Una matriz es una colección de datos del mismo tipo que tiene dos dimensiones. Para 
+                crear una matriz usamos la función matrix. Los elementos se proporcionan en un vector y se 
+                colocan por columnas:
+            </li>
+            <pre>
+M <- matrix(1:10, nrow = 2, ncol = 5)
+M
+            </pre>
+            <p>
+                Si queremos que se rellene por filas es necesario especificar el argumento byrow = TRUE:
+            </p>
+            <pre>
+M <- matrix(1:10, nrow = 2, ncol = 5, byrow=TRUE)
+M
+            </pre>
+            <p>La función dim devuelve las dimensiones de una matriz.</p>
+            <p>La función nrow devuelve el número de filas.</p>
+            <p>La función ncol devuelve el número de columnas:</p>
+            <pre>
+dim(M)
+nrow(M)
+ncol(M)
+            </pre>
+            <p>
+                Podemos asignar nombres a las filas y las columnas de una matriz:
+            </p>
+            <pre>
+rownames(M) <- c("fila1", "fila2")
+colnames(M) <- c("columna1", "columna2", "columna3", "columna4", "columna5")
+M
+            </pre>
+            <p>Podemos seleccionar un elemento por su nombre:</p>
+            <pre>
+M[1,2]
+M["fila2","columna2"]
+            </pre>
+            <p>
+                Podemos extraer filas y columnas enteras como vectores de matrices utilizando sólo el primer o 
+                segundo índice respectivamente y dejando el segundo en blanco:
+            </p>
+            <pre>
+M[1,]
+M[,"columna3"]
+            </pre>
+        </ul>
+        <h2>Operadores aritmético-lógicos</h2>
+        <ul>
+            <li>Suma: +</li>
+            <li>Resta: -</li>
+            <li>Multiplicación: *</li>
+            <li>División: /</li>
+            <li>Potencia: ^</li>
+        </ul>
+        <pre>
+a <- 4
+b <- 3
+suma <- a + b
+diferencia <- a – b
+producto <- a * b
+division <- a / b
+potencia <- a ^ b
+        </pre>
+        <p>Las operaciones de comparación en R se escriben con los siguientes operadores:</p>
+        <ul>
+            <li>Mayor que: ></li>
+            <li>Mayor o igual que: >=</li>
+            <li>Menor que: <</li>
+            <li>Menor o igual que: <=</li>
+            <li>Igual a: ==</li>
+            <li>Distinto de: !=</li>
+        </ul>
+        <p>Estas operaciones devuelven true o false</p>
+        <pre>
+a > 5
+b >= 3
+a < b
+a <= 10
+a == 5
+b != a
+        </pre>
+        <p>Las operaciones lógicas en R se escriben con los siguientes operadores:</p>
+        <ul>    
+            <li>Conjunción (y): && o &</li>
+            <li>Disyunción (o): || o |</li>
+            <li>Negación (no): !</li>
+        </ul>
+        <pre>
+(a > 5) && (b > 2)
+(a > 5) || (b > 2)
+!(a > 5)
+        </pre>
+        <p>Información obtenida de: <a href="https://www.cs.us.es/~fran/curso_unia/introduccion_R.html">https://www.cs.us.es/~fran/curso_unia/introduccion_R.html</a></p>
+        <h2>Qué se necesita para utilizar el lenguaje R</h2>
+        <p>Para utilizar el lenguaje R se puede instalar RStudio, un programa disponible de forma gratuita para Windows, Mac y GNU/Linux. Se descargar <a href="https://www.rstudio.com/">aquí</a>.</p>
+        <h2>Ejemplo</h2>
+        <p>Se quiere graficar la función coseno en el intervalo [0,2Π]</p>
+        <pre>
+        x=seq(0,2*pi,length=100)
+        plot(x,cos(x),type="l",col="blue",lwd=3)
+        </pre>
+        <p>En la primera linea se crea un vector que se usará con la función. En la segunda línea se grafica: la función plot() recibe varios parametros. El primero indica que variable se va a graficar, el segundo de donde va a obtener los valores, el tercer indica que graficará uniendo los puntos mediante líneas, el cuarto indica el color y el ultimo indica el grueso de la línea.</p>
+        <img class="ventana-ejecucion-img" src="../../img/R-ejemplo">
+    </article>
+    <section class="izq">
+        <a href="tarea_6.html">Ir a tarea 6</a>
+    </section>
+    <section class="der">
+        <a href="tarea_8.html">Ir a tarea 8</a>
+    </section>
+    <script src="../../JavaScript/script.js"></script>
+</body>
+</html>

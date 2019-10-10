@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarea 15 - Proyecto Lenguajes de Programación</title>
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto de Lenguajes de Programación: <span class="sub">Tareas</span></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="../../index.html">Inicio</a></li>
+            <li><a class="nav-item" href="../../personal.html">Paginas personales</a></li>
+            <li><a class="activo nav-item" href="#">Tareas</a></li>
+        </ul>
+    </nav>
+    <aside id="izq">
+        <ul id="lista">
+            <li>
+                <li><a id="aparece1" onclick="aparecer('tareas-1','aparece1')" href="#">[+] Tareas Medio Curso</a></li>
+                <ul class="tareas" id="tareas-1">
+                    <li><a href="tarea_1.html">Tarea 1: Paradigmas de programación</a></li>
+                    <li><a href="tarea_2.html">Tarea 2: Lenguajes de programación</a></li>
+                    <li><a href="tarea_3.html">Tarea 3: Lenguaje Prolog</a></li>
+                    <li><a href="tarea_4.html">Tarea 4: Lenguaje Python</a></li>
+                    <li><a href="tarea_5.html">Tarea 5: Lenguaje Scheme</a></li>
+                    <li><a href="tarea_6.html">Tarea 6: Lenguaje Haskell</a></li>
+                    <li><a href="tarea_7.html">Tarea 7: Lenguaje R</a></li>
+                </ul>
+            </li>
+            <li>
+                <li><a id="aparece2" href="#" onclick="aparecer('tareas-2','aparece2')" class="aparecedor">[+] Tareas Ordinario</a></li>
+                <ul class="tareas" id="tareas-2">
+                    <li><a href="tarea_8.html">Tarea 8</a></li>
+                    <li><a href="tarea_9.html">Tarea 9</a></li>
+                    <li><a href="tarea_10.html">Tarea 10</a></li>
+                    <li><a href="tarea_11.html">Tarea 11</a></li>
+                    <li><a href="tarea_12.html">Tarea 12</a></li>
+                    <li><a href="tarea_13.html">Tarea 13</a></li>
+                    <li><a href="tarea_14.html">Tarea 14</a></li>
+                    <li><a href="tarea_15.html">Tarea 15</a></li>
+                    <li><a href="tarea_16.html">Tarea 16</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <article>
+            <section class="izq">
+                    <a href="tarea_14.html">Ir a tarea 14</a>
+            </section>
+            <section class="der">
+                <a href="tarea_16.html">Ir a tarea 16</a>
+            </section>
+        <h1>Tarea 15</h1>
+        <p>Elaborar un programa en JAVA y Ruby que calcule la suma de dos matrices que ingrese el usuario (Nota: validar lo que sea ncesario)</p>
+        <h2>JAVA</h2>
+        <pre>
+/*
+Tarea 15
+Suma de dos matrices que ingrese el usuario
+Estudiante: Erik Everardo Cavazos Hernández
+Matrícula: 1811290
+Clase: Lenguajes de Programación V4-V6 Jueves
+Docente: Ismael Pimentel
+*/
+import javax.swing.JOptionPane;
+public class tarea15{
+    public static void main(String[] args){
+        int n1,n2,m1,m2,i,j;
+        do{
+            n1 = Integer.parseInt(JOptionPane.showInputDialog(null,"Numero de filas para la primera matriz"));
+            m1 = Integer.parseInt(JOptionPane.showInputDialog(null,"Numero de columnas para la primera matriz"));
+            n2 = Integer.parseInt(JOptionPane.showInputDialog(null,"Numero de filas para la segunda matriz"));
+            m2 = Integer.parseInt(JOptionPane.showInputDialog(null,"Numero de columnas para la segunda matriz"));
+            if(n1 != n2 || m2 != m1){
+                JOptionPane.showMessageDialog(null,"No se pueden sumar las matrices. Deben ser del mismo tamanio");
+            }
+        }while(n1 != n2 || m2 != m1);
+        int[][] matriz1 = new int[n1][m1];
+        int[][] matriz2 = new int[n2][m2];
+        int[][] matrizResultado = new int[n1][m1];
+        //datos a la matriz 1
+        JOptionPane.showMessageDialog(null,"Va a introducir los datos de la matriz 1");
+        for(i = 0; i&lt;n1; i++){
+            for(j = 0; j&lt;m1; j++){
+                matriz1[i][j] = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese numero entero a matriz 1["+(i+1)+"]"));
+            }
+        }
+        //datos a la matriz 2
+        JOptionPane.showMessageDialog(null,"Va a introducir los datos de la matriz 2");
+        for(i = 0; i&lt;n2; i++){
+            for(j = 0; j&lt;m2; j++){
+                matriz2[i][j] = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese numero entero a matriz 2["+(i+1)+"]"));
+            }
+        }
+        //sumar cada elemento en la nueva matriz
+        for(i=0; i&lt;n1; i++){
+            for(j = 0; j&lt;m1; j++){
+                matrizResultado[i][j] = matriz1[i][j] + matriz2[i][j];
+            }
+        }
+        //imprimir la matriz resultante
+        String impresionMatriz = "Matriz resultante\n";
+        for(i = 0; i&lt;n1; i++){
+            for(j = 0; j&lt;m1; j++){
+                impresionMatriz += matrizResultado[i][j] + " ";
+            }
+            impresionMatriz += "\n";
+        }
+        JOptionPane.showMessageDialog(null,impresionMatriz);
+    }
+}
+        </pre>
+        <h2>Ruby</h2>
+        <pre>
+#Tarea 15
+#Suma de dos matrices
+#Nombre: Erik Everardo Cavazos Hernandez
+#Matrícula: 1811290
+#Clase: Lenguajes de programación V4-V6 Jueves
+#Docente: Ismael Pimentel
+########################################################
+#asegurarse de que las matrices son del mismo tamaño
+begin
+    print "Numero de filas para la primera matriz: "
+    filas1 = gets().to_i
+    print "Numero de columnas para la primera matriz: "
+    columnas1 = gets().to_i
+    print "Numero de filas para la segunda matriz: "
+    filas2 = gets().to_i
+    print "Numero de columnas para la segunda matriz: "
+    columnas2 = gets().to_i
+    if filas1 != filas2 || columnas1 != columnas2 then
+        puts "No se pueden sumar las matrices. Deben ser del mismo tamaño!"
+    end
+end while filas1 != filas2 || columnas1 != columnas2
+#matrices
+matriz1 = Array.new(filas1){Array.new(columnas1)}
+matriz2 = Array.new(filas2){Array.new(columnas2)}
+matrizResultante = Array.new(filas1){Array.new(columnas1)}
+#leer datos matriz 1
+puts "Introduzca datos a la matriz 1"
+for i in (0...filas1)
+    for j in (0...columnas1)
+        print "Numero para Matriz 1[#{i}][#{j}]: "
+        matriz1[i][j] = gets().to_i
+    end
+end
+#leer datos matriz 2
+puts "Introduzca datos a la matriz 1"
+for i in (0...filas1)
+    for j in (0...columnas1)
+        print "Numero para Matriz 2[#{i}][#{j}]: "
+        matriz2[i][j] = gets().to_i
+    end
+end
+#sumar matrices
+for i in (0...filas1)
+    for j in (0...columnas1)
+        matrizResultante[i][j] = matriz1[i][j] + matriz2[i][j]
+    end
+end
+#imprimir matriz resultante
+puts "Matriz 1 + Matriz 2 ="
+for i in (0...filas1)
+    for j in (0...columnas1)
+        print "#{matrizResultante[i][j]} "
+    end
+    print "\n"
+end
+        </pre>
+    </article>
+    <section class="izq">
+        <a href="tarea_14.html">Ir a tarea 14</a>
+    </section>
+    <section class="der">
+        <a href="tarea_16.html">Ir a tarea 16</a>
+    </section>
+    <script src="../../JavaScript/script.js"></script>
+</body>
+
+</html>

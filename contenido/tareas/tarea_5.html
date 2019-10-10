@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarea 5: Scheme - Proyecto Lenguajes de Programación</title>
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto de Lenguajes de Programación: <span class="sub">Tareas</span></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="../../index.html">Inicio</a></li>
+            <li><a class="nav-item" href="../../personal.html">Paginas personales</a></li>
+            <li><a class="activo nav-item" href="#">Tareas</a></li>
+        </ul>
+    </nav>
+    <aside id="izq">
+        <ul id="lista">
+
+            <li>
+                <li><a id="aparece1" onclick="aparecer('tareas-1','aparece1')" href="#">[+] Tareas Medio Curso</a></li>
+                <ul class="tareas" id="tareas-1">
+                    <li><a href="tarea_1.html">Tarea 1: Paradigmas de programación</a></li>
+                    <li><a href="tarea_2.html">Tarea 2: Lenguajes de programación</a></li>
+                    <li><a href="tarea_3.html">Tarea 3: Lenguaje Prolog</a></li>
+                    <li><a href="tarea_4.html">Tarea 4: Lenguaje Python</a></li>
+                    <li><a href="tarea_5.html">Tarea 5: Lenguaje Scheme</a></li>
+                    <li><a href="tarea_6.html">Tarea 6: Lenguaje Haskell</a></li>
+                    <li><a href="tarea_7.html">Tarea 7: Lenguaje R</a></li>
+                </ul>
+            </li>
+            <li>
+                <li><a id="aparece2" href="#" onclick="aparecer('tareas-2','aparece2')" class="aparecedor">[+] Tareas Ordinario</a></li>
+                <ul class="tareas" id="tareas-2">
+                    <li><a href="tarea_8.html">Tarea 8</a></li>
+                    <li><a href="tarea_9.html">Tarea 9</a></li>
+                    <li><a href="tarea_10.html">Tarea 10</a></li>
+                    <li><a href="tarea_11.html">Tarea 11</a></li>
+                    <li><a href="tarea_12.html">Tarea 12</a></li>
+                    <li><a href="tarea_13.html">Tarea 13</a></li>
+                    <li><a href="tarea_14.html">Tarea 14</a></li>
+                    <li><a href="tarea_15.html">Tarea 15</a></li>
+                    <li><a href="tarea_16.html">Tarea 16</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </aside>
+    <article>
+        <section class="izq">
+            <a href="tarea_4.html">Ir a tarea 4</a>
+        </section>
+        <section class="der">
+            <a href="tarea_6.html">Ir a tarea 6</a>
+        </section>
+        <h1>Lenguaje Scheme</h1>
+        <img style="background-color: white;" src="../../img/logo-mit-gnu-scheme.png">
+        <img src="../../img/logo-scheme48.gif">
+        <p>
+            Scheme es un dialecto de Lisp, es un lenguaje interpretado, muy expresivo y soporta varios paradigmas. Fue desarrollado por Guy L. Steele y Gerald Jay Sussman en la década de los setenta e introducido en el mundo académico a través de una serie de artículos
+            conocidos como los Lambda Papers de Sussman y Steele.
+        </p>
+        <p>Fuente: <a href="https://www.ecured.cu/Scheme">https://www.ecured.cu/Scheme</a></p>
+        <h2>Sintaxis básica</h2>
+        <pre>
+expresión -> átomo | lista
+átomo -> número | string | indentificador | carácter | boolean
+lista -> '('secuencia-expresión')'
+secuencia-expresión -> expresión secuencia-expresión | expresión
+función -> (nombre_función argumento1 argumento2 argumento3 ... argumento-n)
+        </pre>
+        <h2>Tipos de datos</h2>
+        <table>
+            <tr>
+                <td>átomo</td>
+                <td>Elemento básico -> Identificador, letras y digitos</td>
+            </tr>
+            <tr>
+                <td>boléanos</td>
+                <td>#t (verdadero), #f (falso)</td>
+            </tr>
+            <tr>
+                <td>números</td>
+                <td>42, 2+3i, 3.16, 4/6</td>
+            </tr>
+            <tr>
+                <td>listas</td>
+                <td>(Conjunto de elementos entre paréntesis): formado por átomos o listas</td>
+            </tr>
+            <tr>
+                <td>carácter</td>
+                <td>#\a, etc.</td>
+            </tr>
+            <tr>
+                <td>string</td>
+                <td>"hola"</td>
+            </tr>
+        </table>
+        <h2>Operadores</h2>
+        <p>El lenguaje Scheme usa la sintaxis polaca, así por ejemplo:</p>
+        <pre>
+            (+ 1 2 3) -> 6
+        </pre>
+        <p>A continuación, los operadores artiméticos:</p>
+        <table class="operadores">
+            <thead>
+                <th>Operador</th>
+                <th>Operación</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>+</td>
+                    <td>Suma cada uno de los argumentos</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Primer argumento menos los restantes o negación del argumento</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Multiplica cada uno de los argumentos</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>Primer argumento entre cada uno de los restantes</td>
+                </tr>
+                <tr>
+                    <td>abs</td>
+                    <td>Valor absoluto del argumento</td>
+                </tr>
+                <tr>
+                    <td>exp</td>
+                    <td>Exponencial</td>
+                </tr>
+                <tr>
+                    <td>expt</td>
+                    <td>Dados dos argumentos: a y b, calcula a<sup>b</sup>;</td>
+                </tr>
+                <tr>
+                    <td>max</td>
+                    <td>Máximo de sus argumentos</td>
+                </tr>
+                <tr>
+                    <td>min</td>
+                    <td>Mínimo de sus argumentos</td>
+                </tr>
+                <tr>
+                    <td>sqrt</td>
+                    <td>Raíz cuadrada del argumento no negativo</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Funciones de comparación aritmética</h2>
+        <table class="operadores">
+            <thead>
+                <th>Función</th>
+                <th>Significado</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>=</td>
+                    <td>Igual (átomos numericos)</td>
+                </tr>
+                <tr>
+                    <td>></td>
+                    <td>Mayor que</td>
+                </tr>
+                <tr>
+                    <td><</td>
+                    <td>Menor que</td>
+                </tr>
+                <tr>
+                    <td>>=</td>
+                    <td>Mayor o igual que</td>
+                </tr>
+                <tr>
+                    <td><=</td>
+                    <td>Menor o igual que</td>
+                </tr>
+                <tr>
+                    <td>even?</td>
+                    <td>¿Es número par?</td>
+                </tr>
+                <tr>
+                    <td>odd?</td>
+                    <td>¿Es número impar?</td>
+                </tr>
+                <tr>
+                    <td>zero?</td>
+                    <td>¿Es cero?</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Fuente: <a href="http://www.gedlc.ulpgc.es/docencia/lp/documentacion/GB_Scheme.pdf">http://www.gedlc.ulpgc.es/docencia/lp/documentacion/GB_Scheme.pdf</a></p>
+        <p>A continuación se muestra un ejemplo de aplicación de algunos de los operadores:</p>
+        <pre>
+(+ 2 2) -> 4
+(- 2 1) -> 1
+(* 2 3 4) -> 24
+(even? 2) -> true
+(<= 5 5) -> true</pre>
+        <img class="ventana-ejecucion-img" src="../../img/scheme-operadores.png">
+        <h2>¿Qué es necesario descargar?</h2>
+        <p>Para utilizar Scheme se tienen varias implementaciones. En el ejemplo anterior se utiliza <a href="http://s48.org/">Scheme 48</a>. Está disponible para Windows, y también el código fuente, que permite contruir una versión para GNU/Linux o MAC.</p>
+        <h2>Editar</h2>
+        <p>En el caso de Scheme 48, se recomienda, segun la documentación ofical, utilizar <a href="https://www.gnu.org/software/emacs/">GNU Emacs</a> usando el paquete <em>cmuscheme48 command</em>. Para más información, visite la <a target="_blank" href="http://s48.org/1.9.2/manual/manual-Z-H-3.html#node_sec_2.3">documentación oficial</a>,
+            en el apartado "Editing"</p>
+        <p>Otra opción es utiliar <em>MIT/GNU Scheme</em>, que solo está disponible para GNU/Linux y MAC.</p>
+        <p>Para instalarlo en Ubuntu o alguna distribución basada en Debian se puede utilizar los repositorios incluidos.</p>
+        <pre>
+            sudo apt-get install mit-scheme</pre>
+        <h2>Ejemplo de programa</h2>
+        <pre>
+(define (T)
+(display "*"))
+
+(define (dibuje cant)
+   (do ((i 0 (+ i 1)))
+       ((= i cant) )
+     (t)
+     (display " ")))
+
+(define (triangulo)
+   (do ((i 1 (+ i 1)))
+         ((= i 10) )
+     (dibuje i)
+     (newline)))</pre>
+        <p>Código obtenido de: <a href="http://ceciliaurbina.blogspot.com/2010/11/scheme.html">http://ceciliaurbina.blogspot.com/2010/11/scheme.html</a></p>
+        <img class="ventana-ejecucion-img" src="../../img/ejecucion-scheme.png">
+    </article>
+    <section class="izq">
+        <a href="tarea_4.html">Ir a tarea 4</a>
+    </section>
+    <section class="der">
+        <a href="tarea_6.html">Ir a tarea 6</a>
+    </section>
+    <script src="../../JavaScript/script.js"></script>
+</body>
+
+</html>

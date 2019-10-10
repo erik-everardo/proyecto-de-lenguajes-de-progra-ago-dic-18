@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarea 2: Lenguajes de programación - Proyecto Lenguajes de Programación</title>
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto de Lenguajes de Programación: <span class="sub">Tareas</span></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="../../index.html">Inicio</a></li>
+            <li><a class="nav-item" href="../../personal.html">Paginas personales</a></li>
+            <li><a class="activo nav-item" href="#">Tareas</a></li>
+        </ul>
+    </nav>
+    <aside id="izq">
+        <ul id="lista">
+            <li>
+                <li><a id="aparece1" onclick="aparecer('tareas-1','aparece1')" href="#">[+] Tareas Medio Curso</a></li>
+                <ul class="tareas" id="tareas-1">
+                    <li><a href="tarea_1.html">Tarea 1: Paradigmas de programación</a></li>
+                    <li><a href="tarea_2.html">Tarea 2: Lenguajes de programación</a></li>
+                    <li><a href="tarea_3.html">Tarea 3: Lenguaje Prolog</a></li>
+                    <li><a href="tarea_4.html">Tarea 4: Lenguaje Python</a></li>
+                    <li><a href="tarea_5.html">Tarea 5: Lenguaje Scheme</a></li>
+                    <li><a href="tarea_6.html">Tarea 6: Lenguaje Haskell</a></li>
+                    <li><a href="tarea_7.html">Tarea 7: Lenguaje R</a></li>
+                </ul>
+            </li>
+            <li>
+                <li><a id="aparece2" href="#" onclick="aparecer('tareas-2','aparece2')" class="aparecedor">[+] Tareas Ordinario</a></li>
+                <ul class="tareas" id="tareas-2">
+                    <li><a href="tarea_8.html">Tarea 8</a></li>
+                    <li><a href="tarea_9.html">Tarea 9</a></li>
+                    <li><a href="tarea_10.html">Tarea 10</a></li>
+                    <li><a href="tarea_11.html">Tarea 11</a></li>
+                    <li><a href="tarea_12.html">Tarea 12</a></li>
+                    <li><a href="tarea_13.html">Tarea 13</a></li>
+                    <li><a href="tarea_14.html">Tarea 14</a></li>
+                    <li><a href="tarea_15.html">Tarea 15</a></li>
+                    <li><a href="tarea_16.html">Tarea 16</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <article>
+        <section class="izq">
+            <a href="tarea_1.html">Ir a tarea 1</a>
+        </section>
+        <section class="der">
+            <a href="tarea_3.html">Ir a tarea 3</a>
+        </section>
+        <h1>Lenguajes de programación</h1>
+        <img src="../../img/programminglanguages.png"/>
+        <p style="font-size: 12px">Imagen obtenida de <a href="https://blog.professorbeekums.com/2017/01/do-programming-languages-matter.html">https://blog.professorbeekums.com/2017/01/do-programming-languages-matter.html</a></p>
+        <h2>¿Qué es un lenguaje de programación?</h2>
+        <p>
+            Un lenguaje de programación es un lenguaje diseñado para describir el conjunto de acciones consecutivas que un 
+            equipo debe ejecutar. Por lo tanto, un lenguaje de programación es un modo práctico para que los seres humanos puedan dar instrucciones a un equipo.
+        </p>
+        <h2>Clasificación de los lenguajes de programación de alto nivel</h2>
+        <p>Los lenguajes de programación se pueden clasificar de varias maneras:</p>
+        <ul>
+            <li>Su propósito</li>
+            <li>Su método de ejecución</li>
+            <li>Su paradigma de programación</li>
+        </ul>
+        <h3>Clasificación según su proposito</h3>
+        <ul>
+            <li>Lenguajes de propósito general: permiten la implementación de prácticamente cualquier algoritmo, el nivel de abstracción es más uniforme, proporciona razonable rendimiento. </li>
+            <li>Lenguajes de propósito específico: tienen por lo general un conjunto muy restringido de características y un alto nivel de abstracción para cumplir tareas especificas como el procesamiento de textos, gráficos, audio, video e ingeniería.</li>
+        </ul>
+        <h3>Clasificación según su método de ejecución</h3>
+        <ul>
+            <li>Lenguajes Compilados: traducen el código fuente del programa a código máquina o código objeto.</li>
+            <li>Lenguajes Interpretados: ejecutan línea a línea las instrucciones de un programa. Requieren del código fuente para ejecutar el programa.</li>
+        </ul>
+        <h3>Clasificación según su Paradigma de Programación</h3>
+        <ul>
+            <li>Lenguajes Imperativos: son abstracciones de alguna secuencia de instrucciones que especifican con detalle el orden de ejecución del programa.</li>
+            <li>Lenguajes Declarativos: expresan lo que el programa debe lograr sin prescribir cómo hacerlo, en términos de secuencias de acciones que deben tomarse.</li>
+            <li>Lenguajes Funcionales: constan de un conjunto de funciones pre-definidas.</li>
+            <li>Lenguajes de Lógicos: expresan tareas utilizando la lógica formal matemática.</li>
+            <li>Lenguajes Orientados a Objetos: crean un sistema de clases y objetos siguiendo el esquema del mundo real para definir los objetos, acciones y forma de comunican entre objetos.</li>
+        </ul>
+        <p>Fuente: <a href="http://www.cavsi.com/preguntasrespuestas/cual-es-la-clasificacion-los-lenguajes-de-programacion/">http://www.cavsi.com/preguntasrespuestas/cual-es-la-clasificacion-los-lenguajes-de-programacion/</a></p>
+        <h3>Ejemplos</h3>
+        <h4>Interpretados</h4>
+        <ul>
+            <li><a href="https://www.perl.org/about.html">Perl</a></li>
+            <li><a href="https://www.ruby-lang.org/es/">Ruby</a></li>
+            <li><a href="http://php.net/manual/es/intro-whatis.php">PHP</a></li>
+            <li><a href="https://www.python.org/about/">Python</a></li>
+            <li><a href="https://www.javascript.com/about">JavaScript</a></li>
+            <li><a href="https://www.oracle.com/mx/java/">JAVA</a></li>
+        </ul>
+        <h4>Compilados</h4>
+        <ul>
+            <li><a href="https://es.wikipedia.org/wiki/C_(lenguaje_de_programaci%C3%B3n)">C/C++</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/Pascal_(lenguaje_de_programaci%C3%B3n)">Pascal</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/C_Sharp">C#</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/Lisp">Lisp</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/Visual_Basic">Visual Basic</a></li>
+        </ul>
+        <h4>Orientados a objetos</h4>
+        <ul>
+            <li><a href="https://www.perl.org/about.html">Perl</a></li>
+            <li><a href="https://www.ruby-lang.org/es/">Ruby</a></li>
+            <li><a href="http://php.net/manual/es/intro-whatis.php">PHP</a></li>
+            <li><a href="https://www.python.org/about/">Python</a></li>
+            <li><a href="https://www.javascript.com/about">JavaScript</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/C_Sharp">C#</a></li>
+            <li><a href="https://www.oracle.com/mx/java/">JAVA</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/C%2B%2B">C++</a></li>
+        </ul>
+        <h4>Funcionales</h4>
+        <ul>
+            <li><a href="https://es.wikipedia.org/wiki/Scheme">Scheme</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/Lisp">Lisp</a></li>
+            <li><a href="https://www.scala-lang.org/">Scala</a></li>
+            <li><a href="https://www.haskell.org/">Haskell</a></li>
+        </ul>
+    </article>
+    <section class="izq">
+        <a href="tarea_1.html">Ir a tarea 1</a>
+    </section>
+    <section class="der">
+        <a href="tarea_3.html">Ir a tarea 3</a>
+    </section>
+    <script src="../../JavaScript/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarea 16 - Proyecto Lenguajes de Programación</title>
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto de Lenguajes de Programación: <span class="sub">Tareas</span></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="../../index.html">Inicio</a></li>
+            <li><a class="nav-item" href="../../personal.html">Paginas personales</a></li>
+            <li><a class="activo nav-item" href="#">Tareas</a></li>
+        </ul>
+    </nav>
+    <aside id="izq">
+        <ul id="lista">
+            <li>
+                <li><a id="aparece1" onclick="aparecer('tareas-1','aparece1')" href="#">[+] Tareas Medio Curso</a></li>
+                <ul class="tareas" id="tareas-1">
+                    <li><a href="tarea_1.html">Tarea 1: Paradigmas de programación</a></li>
+                    <li><a href="tarea_2.html">Tarea 2: Lenguajes de programación</a></li>
+                    <li><a href="tarea_3.html">Tarea 3: Lenguaje Prolog</a></li>
+                    <li><a href="tarea_4.html">Tarea 4: Lenguaje Python</a></li>
+                    <li><a href="tarea_5.html">Tarea 5: Lenguaje Scheme</a></li>
+                    <li><a href="tarea_6.html">Tarea 6: Lenguaje Haskell</a></li>
+                    <li><a href="tarea_7.html">Tarea 7: Lenguaje R</a></li>
+                </ul>
+            </li>
+            <li>
+                <li><a id="aparece2" href="#" onclick="aparecer('tareas-2','aparece2')" class="aparecedor">[+] Tareas Ordinario</a></li>
+                <ul class="tareas" id="tareas-2">
+                    <li><a href="tarea_8.html">Tarea 8</a></li>
+                    <li><a href="tarea_9.html">Tarea 9</a></li>
+                    <li><a href="tarea_10.html">Tarea 10</a></li>
+                    <li><a href="tarea_11.html">Tarea 11</a></li>
+                    <li><a href="tarea_12.html">Tarea 12</a></li>
+                    <li><a href="tarea_13.html">Tarea 13</a></li>
+                    <li><a href="tarea_14.html">Tarea 14</a></li>
+                    <li><a href="tarea_15.html">Tarea 15</a></li>
+                    <li><a href="tarea_16.html">Tarea 16</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <article>
+            <section class="izq">
+                    <a href="tarea_15.html">Ir a tarea 15</a>
+            </section>
+            <section class="der">
+                    <a href="tarea_1.html">Ir a tarea 1</a>
+            </section>
+        <h1>Tarea 16</h1>
+        <p>Elaborar un programa en JAVA y Ruby que calcule la multiplicacion de dos matrices que ingrese el usuario, (nota: validar lo que sea necesario)</p>
+        <h2>JAVA</h2>
+        <pre>
+/*
+Tarea 16
+Multiplicacion de dos matrices que ingrese el usuario
+Estudiante: Erik Everardo Cavazos Hernández
+Matrícula: 1811290
+Clase: Lenguajes de Programación V4-V6 Jueves
+Docente: Ismael Pimentel
+*/
+import javax.swing.JOptionPane;
+
+public class tarea16{
+    public static void main(String[] args){
+        int i,j,k,n1,m1,n2,m2,salir=0;
+        String[]opciones = {"Realizar otra multiplicacion","Salir"};
+        
+        while(salir==0){
+            //asegurarse de que las matrices se pueden multiplicar. 
+            //numero de filas de la primera matriz debe ser igual al numero de columnas de la segunda matriz
+            do{
+                n1 = Integer.parseInt(JOptionPane.showInputDialog(null,"Numero de filas para la primera matriz"));
+                m1 = Integer.parseInt(JOptionPane.showInputDialog(null,"Numero de columnas para la primera matriz"));
+
+                n2 = Integer.parseInt(JOptionPane.showInputDialog(null,"Numero de filas para la segunda matriz"));
+                m2 = Integer.parseInt(JOptionPane.showInputDialog(null,"Numero de columnas para la segunda matriz"));
+                if(n1 != m2){
+                    JOptionPane.showMessageDialog(null, "Numero de filas de la primera matriz debe ser igual al numero de columnas de la segunda matriz");
+                }
+            }while(n1 != m2);
+
+            //declaracion de matrices
+            int[][] matriz1 = new int[n1][m1];
+            int[][] matriz2 = new int[n2][m2];
+            int[][] matrizResultante = new int[n1][m2];
+
+            //datos a la matriz 1
+            JOptionPane.showMessageDialog(null,"Va a introducir los datos de la matriz 1");
+            for(i = 0; i&lt;n1; i++){
+                for(j = 0; j&lt;m1; j++){
+                    matriz1[i][j] = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese numero entero a matriz 1["+(i+1)+"][" + (j+1)+"]"));
+                }
+            }
+
+            //datos a la matriz 2
+            JOptionPane.showMessageDialog(null,"Va a introducir los datos de la matriz 2");
+            for(i = 0; i&lt;n2; i++){
+                for(j = 0; j&lt;m2; j++){
+                    matriz2[i][j] = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese numero entero a matriz 2["+(i+1)+"][" + (j+1)+"]"));
+                }
+            }
+
+            //multiplicacion: se hace producto punto de fila por columna
+            for(i = 0; i&lt;n1; i++){
+                for(j = 0; j&lt;m2; j++){
+                    for(k=0;k&lt;m1;k++){
+                        matrizResultante[i][j] += matriz1[i][k] * matriz2[k][j];
+                    }
+                }
+            }
+
+            //imprimir la matriz resultante
+            String impresionMatriz = "Matriz resultante\n";
+            for(i = 0; i&lt;n1; i++){
+                for(j = 0; j&lt;m2; j++){
+                    impresionMatriz += matrizResultante[i][j] + " ";
+                }
+                impresionMatriz += "\n";
+            }
+            JOptionPane.showMessageDialog(null,impresionMatriz);
+            salir = JOptionPane.showOptionDialog(null,"Que desea hacer?", "Que desea hacer?", JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE,null, opciones,opciones[0]);
+        }
+    }
+}
+        </pre>
+        <h2>Ruby</h2>
+        <pre>
+#Tarea 16
+#Multiplicacion de dos matrices
+#Nombre: Erik Everardo Cavazos Hernandez
+#Matrícula: 1811290
+#Clase: Lenguajes de programación V4-V6 Jueves
+#Docente: Ismael Pimentel
+########################################################
+salir = 2
+while salir==2
+    #Asegurarse de que las matrices se pueden multiplicar
+    #numero de filas de la primera matriz debe ser igual
+    #al numero de columnas de la segunda matriz
+    begin
+        print "Numero de filas de la primera matriz: "
+        n1 = gets.to_i
+        print "Numero de columnas de la primera matriz: "
+        m1 = gets.to_i
+        print "Numero de filas de la segunda matriz: "
+        n2 = gets.to_i
+        print "Numero de columnas de la segunda matriz: "
+        m2 = gets.to_i
+        if n1 != m2 then
+            puts "Numero de filas de matriz 1 debe ser igual al numero de columnas de la matriz 2"
+        end
+    end while n1 != m2
+
+    #delaracion de matrices
+    matriz1 = Array.new(n1){Array.new(m1)}
+    matriz2 = Array.new(m1){Array.new(m2)}
+    matrizResultante = Array.new(n1){Array.new(m2)}
+
+    ###le asigno 0 a cada valor del array para poder sumar despues#########
+    for i in (0...n1)
+        for j in (0...m2)
+            matrizResultante[i][j] = 0
+        end
+    end
+    ####################################################################
+    #leer y guardar datos en matriz 1
+    puts "Ingrese datos a la matriz 1"
+    for i in (0...n1)
+        for j in (0...m1)
+            print "Elemento para Matriz 1[#{i}][#{j}]: "
+            matriz1[i][j] = gets.to_i
+        end
+    end
+    #leer y guardar datos en matriz 2
+    puts "Ingrese datos a la matriz 2"
+    for i in (0...n1)
+        for j in (0...m1)
+            print "Elemento para Matriz 1[#{i}][#{j}]: "
+            matriz2[i][j] = gets.to_i
+        end
+    end
+
+    #multiplicacion
+    for i in (0...n1)
+        for j in (0...m2)
+            for k in (0...m1)
+                matrizResultante[i][j] = matrizResultante[i][j] + (matriz1[i][k] * matriz2[k][j])
+            end
+        end
+    end
+
+    #imprimir la matriz resultante
+    puts "Matriz 1 * Matriz 2 ="
+    for i in (0...n1)
+        for j in (0...m2)
+            print "#{matrizResultante[i][j]} "
+        end
+        print "\n"
+    end
+    puts "Desea realizar otra multiplicacion?"
+    puts "1. No"
+    puts "2. Si"
+    print "=>"
+    salir = gets.to_i
+end
+        </pre>
+    </article>
+    <section class="izq">
+        <a href="tarea_15.html">Ir a tarea 15</a>
+    </section>
+    <section class="der"><a href="tarea_1.html">Ir a tarea 1</a></section>
+    <script src="../../JavaScript/script.js"></script>
+</body>
+
+</html>

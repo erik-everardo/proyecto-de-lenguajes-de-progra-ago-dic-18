@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarea 3: Prolog - Proyecto Lenguajes de Programación</title>
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto de Lenguajes de Programación: <span class="sub">Tareas</span></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="../../index.html">Inicio</a></li>
+            <li><a class="nav-item" href="../../personal.html">Paginas personales</a></li>
+            <li><a class="activo nav-item" href="#">Tareas</a></li>
+        </ul>
+    </nav>
+    <aside id="izq">
+        <ul id="lista">
+            <li>
+                <li><a id="aparece1" onclick="aparecer('tareas-1','aparece1')" href="#">[+] Tareas Medio Curso</a></li>
+                <ul class="tareas" id="tareas-1">
+                    <li><a href="tarea_1.html">Tarea 1: Paradigmas de programación</a></li>
+                    <li><a href="tarea_2.html">Tarea 2: Lenguajes de Programación</a></li>
+                    <li><a href="tarea_3.html">Tarea 3: Lenguaje Prolog</a></li>
+                    <li><a href="tarea_4.html">Tarea 4: Lenguaje Python</a></li>
+                    <li><a href="tarea_5.html">Tarea 5: Lenguaje Scheme</a></li>
+                    <li><a href="tarea_6.html">Tarea 6: Lenguaje Haskell</a></li>
+                    <li><a href="tarea_7.html">Tarea 7: Lenguaje R</a></li>
+                </ul>
+            </li>
+            <li>
+                <li><a id="aparece2" href="#" onclick="aparecer('tareas-2','aparece2')" class="aparecedor">[+] Tareas Ordinario</a></li>
+                <ul class="tareas" id="tareas-2">
+                    <li><a href="tarea_8.html">Tarea 8</a></li>
+                    <li><a href="tarea_9.html">Tarea 9</a></li>
+                    <li><a href="tarea_10.html">Tarea 10</a></li>
+                    <li><a href="tarea_11.html">Tarea 11</a></li>
+                    <li><a href="tarea_12.html">Tarea 12</a></li>
+                    <li><a href="tarea_13.html">Tarea 13</a></li>
+                    <li><a href="tarea_14.html">Tarea 14</a></li>
+                    <li><a href="tarea_15.html">Tarea 15</a></li>
+                    <li><a href="tarea_16.html">Tarea 16</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <article>
+        <section class="izq">
+            <a href="tarea_2.html">Ir a tarea 2</a>
+        </section>
+        <section class="der">
+            <a href="tarea_4.html">Ir a tarea 4</a>
+        </section>
+        <h1>Lenguaje Prolog</h1>
+        <img src="../../img/swipl.png"/>
+        <p>Prolog es un lenguaje de programación lógica cuya primera versión fue desarrollada a principios de la década de 
+            1970 por Colmerauer en la universidad de Marsella. Contrariamente a otros lenguajes de programación basados es 
+            estructuras de control y definición de funciones para calcular resultados, Prolog está orientado a la 
+            especificación de relaciones para responder consultas. En ese sentido Prolog es similar a un sistema de 
+            base de datos, aunque en el contexto de la inteligencia artificial se prefiere hablar de bases de conocimiento, 
+            enfatizando la complejidad estructural de los datos y de las deducciones que se pueden obtener de ellos.
+        </p>
+        <h2>Símbolos, sintaxis, esqueleto de lo programas</h2>
+        <p>
+            Al contrario que la mayoría de los lenguajes de programación, Prolog es un lenguaje
+            conversacional; es decir, el sistema Prolog mantiene un diálogo continuo con el programador
+            desde el inicio de la sesión hasta el final de la misma. Este diálogo toma generalmente la forma
+            de un interrogatorio, a lo largo del cual el programador planteará preguntas al sistema Prolog.
+            Por su parte, el sistema Prolog responderá cada una de las preguntas formuladas por el
+            programador en la medida en que esto sea posible. 
+        </p>
+        <h3>Preguntas</h3>
+        <p>Si se quiere preguntar a Prolog si 5 es igual a 2 + 3</p>
+        <pre>
+            ?- 5 is 2+3.
+            Yes
+        </pre>
+        <p>También, puede responder de manera negativa en ese caso. Ejemplo:</p>
+        <pre>
+            ?- 1 is 1+1.
+            No
+        </pre>
+        <p>
+            Para responder a tales preguntas, Prolog consulta una base de conocimiento. Inicialmente, Prolog cuenta con
+            una base incial de conocimiento que consiste entre otras cosas definiciones de aritmética de numeros naturales.
+        </p>
+        <p>
+            Se puede ampliar la base de conocimientos.
+        </p>
+        <pre>
+            esPato(lucas).
+            esPato(donald).
+            esPato(gilito).
+        </pre>
+        <p>Con los predicados anteriores se le ha dicho a Prolog que lucas, donald y gilito "son patos". Con esto, cuando se le pregunte
+            a Prolog: 
+        </p>
+        <pre>
+            ?- esPato(lucas).
+            Yes
+        </pre>
+        <p>
+            Responderá afirmativamente. En cambio, si se pregunta:
+        </p>
+        <pre>
+            ?- esPato(jorgito).
+            No
+        </pre>
+        <p>Responderá negativamente, debido a que no se escibió un predicado que afirme que "jorgito es pato"</p>
+        <p>Se puede preguntar a Prolog todas las posibles respuestas aPato. Se utiliza: </p>
+        <pre>
+            ?- esPato(X).
+        </pre>
+        <p>Y regresará: </p>
+        <pre>
+            X = lucas
+        </pre>
+        <p>Pudiendo obtener todas las respuestas con un ";"</p>
+        <pre>
+            ?- esPato(X).
+            X = lucas;
+            X = donald;
+            X = gilito;
+            No
+        </pre>
+        <p>Para más información: <a href="http://www.lcc.uma.es/~pacog/apuntes/pd/guia.pdf">http://www.lcc.uma.es/~pacog/apuntes/pd/guia.pdf</a></p>
+        <h2>¿Qué es necesario instalar para utilizar el sistema Prolog?</h2>
+        <p>Se puede utilizar <strong>SWI-Prolog </strong></p>
+        <p>Se puede descargar <a href="http://www.swi-prolog.org/Download.html">aquí</a></p>
+        <p>Se puede observar en la imagen abajo, dos sencillas declaraciones de <strong>verdades absolutas</strong> y una consulta.</p>
+        <img src="../../img/ejemploPrologEjecucion.png"/>
+        <p>En cuanto al editor de texto, puede usarse cualquier editor de texto (VS Code, Sublime Text, etc) o el editor integrado en SWI-Prolog.
+            Los archivos de codigo se deben guardar con la extensión <em>.pl</em>, igual que con los archivos del lenguaje Perl, por lo que hay que tenerlo en cuenta.
+        </p>
+        <h2>Un ejemplo</h2>
+        <pre>
+            factorial(0, 1).
+            factorial(1, 1).
+            factorial(N, F) :- N>0, N1 is N - 1, factorial(N1, F1), F is N * F1.
+        </pre>
+        <p>Al preguntarle a Prolog</p>
+        <pre>
+            ?- factorial(5,F).
+            F = 120
+        </pre>
+        <img src="../../img/ejemploProlog2.png"/>
+        <p>Como se puede observar, el factorial se calcula de manera recursiva. La sintaxis es:</p>
+        <pre>
+            factorial(N, F)
+        </pre>
+    </article>
+    <section class="izq">
+        <a href="tarea_2.html">Ir a tarea 2</a>
+    </section>
+    <section class="der">
+        <a href="tarea_4.html">Ir a tarea 4</a>
+    </section>
+    <script src="../../JavaScript/script.js"></script>
+</body>
+
+</html>

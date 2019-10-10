@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarea 13 - Proyecto Lenguajes de Programación</title>
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto de Lenguajes de Programación: <span class="sub">Tareas</span></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="../../index.html">Inicio</a></li>
+            <li><a class="nav-item" href="../../personal.html">Paginas personales</a></li>
+            <li><a class="activo nav-item" href="#">Tareas</a></li>
+        </ul>
+    </nav>
+    <aside id="izq">
+        <ul id="lista">
+            <li>
+                <li><a id="aparece1" onclick="aparecer('tareas-1','aparece1')" href="#">[+] Tareas Medio Curso</a></li>
+                <ul class="tareas" id="tareas-1">
+                    <li><a href="tarea_1.html">Tarea 1: Paradigmas de programación</a></li>
+                    <li><a href="tarea_2.html">Tarea 2: Lenguajes de programación</a></li>
+                    <li><a href="tarea_3.html">Tarea 3: Lenguaje Prolog</a></li>
+                    <li><a href="tarea_4.html">Tarea 4: Lenguaje Python</a></li>
+                    <li><a href="tarea_5.html">Tarea 5: Lenguaje Scheme</a></li>
+                    <li><a href="tarea_6.html">Tarea 6: Lenguaje Haskell</a></li>
+                    <li><a href="tarea_7.html">Tarea 7: Lenguaje R</a></li>
+                </ul>
+            </li>
+            <li>
+                <li><a id="aparece2" href="#" onclick="aparecer('tareas-2','aparece2')" class="aparecedor">[+] Tareas Ordinario</a></li>
+                <ul class="tareas" id="tareas-2">
+                    <li><a href="tarea_8.html">Tarea 8</a></li>
+                    <li><a href="tarea_9.html">Tarea 9</a></li>
+                    <li><a href="tarea_10.html">Tarea 10</a></li>
+                    <li><a href="tarea_11.html">Tarea 11</a></li>
+                    <li><a href="tarea_12.html">Tarea 12</a></li>
+                    <li><a href="tarea_13.html">Tarea 13</a></li>
+                    <li><a href="tarea_14.html">Tarea 14</a></li>
+                    <li><a href="tarea_15.html">Tarea 15</a></li>
+                    <li><a href="tarea_16.html">Tarea 16</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <article>
+        <section class="izq">
+            <a href="tarea_12.html">Ir a tarea 12</a>
+        </section>
+        <section class="der">
+            <a href="tarea_14.html">Ir a tarea 14</a>
+        </section>
+        <h1>Tarea 13</h1>
+        <p>Elaborar un programa en JAVA y Ruby que realice una busqueda de un numero en un vector, mostrando solamente un mensaje indicando cuantas veces apareció el numero. Ademas de imprimir el vector.</p>
+        <h2>JAVA</h2>
+        <pre>
+/*
+Tarea 13
+Busqueda de un elemento en un vector
+Estudiante: Erik Everardo Cavazos Hernández
+Matrícula: 1811290
+Clase: Lenguajes de Programación V4-V6 Jueves
+Docente: Ismael Pimentel
+*/
+import javax.swing.JOptionPane;
+
+public class tarea13{
+    public static void main(String[] args){
+        int n = Integer.parseInt(JOptionPane.showInputDialog(null,"Cantidad de elementos:"));
+        int[] a = new int[n];
+        int i;
+        for(i=0;i&lt;n;i++){
+            a[i] = Integer.parseInt(JOptionPane.showInputDialog(null,"Introduzca un numero entero para la posicion [" + i +"]"));
+        }
+        int elementoBuscado = Integer.parseInt(JOptionPane.showInputDialog(null,"Elemento a buscar:"));
+        int contador = 0;
+        for(i=0;i&lt;n;i++){
+            if(a[i] == elementoBuscado){
+                contador++;
+            }
+        }
+        if(contador == 0){
+            JOptionPane.showMessageDialog(null,"El numero " + elementoBuscado + " no fue encontrado en el vector");
+        }
+        else if(contador == 1){
+            JOptionPane.showMessageDialog(null,"El numero " + elementoBuscado + " fue encontrado una vez en el vector");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"El numero " + elementoBuscado + " fue encontrado " + contador + " veces en el vector");
+        }
+        String impresionArreglo = "A = {";
+        for(i=0;i&lt;n-1;i++){
+            impresionArreglo += a[i] + ",";
+        }
+        impresionArreglo += a[n-1] + "}";
+        JOptionPane.showMessageDialog(null,impresionArreglo);
+    }
+}
+        </pre>
+        <h2>Ruby</h2>
+        <pre>
+#Tarea 13
+#Busqueda de un elemento en un vector
+#Nombre: Erik Everardo Cavazos Hernandez
+#Matrícula: 1811290
+#Clase: Lenguajes de programación V4-V6 Jueves
+#Docente: Ismael Pimentel
+print "Cantidad de elementos del vector: "
+n = gets().to_i
+array = Array.new(n)
+for i in (0...n)
+    print "Elemento #{i+1} del array: "
+    array[i] = gets().to_i
+end
+puts "Array guardado!"
+print "Que elemento quiere buscar? "
+elementoBuscado = gets().to_i
+contador = 0
+for i in (0...n)
+    if elementoBuscado == array[i] then
+        contador = contador + 1
+    end
+end
+if contador == 0 then
+    puts "El numero #{elementoBuscado} no se encontró en el array!"
+elsif contador == 1 then
+    puts "El numero #{elementoBuscado} se encontró una vez en el array!"
+else
+    puts "El numero #{elementoBuscado} se encontró #{contador} veces!"
+end
+for i in (0...n-1)
+    print "#{array[i]}, "
+end
+print array[n-1]
+        </pre>
+    </article>
+    <section class="izq">
+        <a href="tarea_12.html">Ir a tarea 12</a>
+    </section>
+    <section class="der">
+        <a href="tarea_14.html">Ir a tarea 14</a>
+    </section>
+    <script src="../../JavaScript/script.js"></script>
+</body>
+
+</html>

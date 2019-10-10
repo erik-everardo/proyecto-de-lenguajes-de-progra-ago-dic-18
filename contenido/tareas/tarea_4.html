@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarea 4: Python - Proyecto Lenguajes de Programación</title>
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto de Lenguajes de Programación: <span class="sub">Tareas</span></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="../../index.html">Inicio</a></li>
+            <li><a class="nav-item" href="../../personal.html">Paginas personales</a></li>
+            <li><a class="activo nav-item" href="#">Tareas</a></li>
+        </ul>
+    </nav>
+    <aside id="izq">
+        <ul id="lista">
+
+            <li>
+                <li><a id="aparece1" onclick="aparecer('tareas-1','aparece1')" href="#">[+] Tareas Medio Curso</a></li>
+                <ul class="tareas" id="tareas-1">
+                    <li><a href="tarea_1.html">Tarea 1: Paradigmas de programación</a></li>
+                    <li><a href="tarea_2.html">Tarea 2: Lenguajes de programación</a></li>
+                    <li><a href="tarea_3.html">Tarea 3: Lenguaje Prolog</a></li>
+                    <li><a href="tarea_4.html">Tarea 4: Lenguaje Python</a></li>
+                    <li><a href="tarea_5.html">Tarea 5: Lenguaje Scheme</a></li>
+                    <li><a href="tarea_6.html">Tarea 6: Lenguaje Haskell</a></li>
+                    <li><a href="tarea_7.html">Tarea 7: Lenguaje R</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <li><a id="aparece2" href="#" onclick="aparecer('tareas-2','aparece2')" class="aparecedor">[+] Tareas Ordinario</a></li>
+                <ul class="tareas" id="tareas-2">
+                    <li><a href="tarea_8.html">Tarea 8</a></li>
+                    <li><a href="tarea_9.html">Tarea 9</a></li>
+                    <li><a href="tarea_10.html">Tarea 10</a></li>
+                    <li><a href="tarea_11.html">Tarea 11</a></li>
+                    <li><a href="tarea_12.html">Tarea 12</a></li>
+                    <li><a href="tarea_13.html">Tarea 13</a></li>
+                    <li><a href="tarea_14.html">Tarea 14</a></li>
+                    <li><a href="tarea_15.html">Tarea 15</a></li>
+                    <li><a href="tarea_16.html">Tarea 16</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </aside>
+    <article>
+        <section class="izq">
+            <a href="tarea_3.html">Ir a tarea 3</a>
+        </section>
+        <section class="der">
+            <a href="tarea_5.html">Ir a tarea 5</a>
+        </section>
+        <h1>Lenguaje Python</h1>
+        <img src="../../img/python-logo.png"/>
+        <p>
+            <strong>Python</strong> es un lenguaje de programación interpretado, multiparadigma, ya que soporta programación orientada a objetos, programación imperativa y programación funcional.
+            Este lenguaje tiene una sintaxis que facilita un código legible. Es administrado por la <a href="https://www.python.org/psf/">Python Software Foundation</a> y es de código abierto.
+        </p>
+        <h2>Introducción a Python</h2>
+        <h3>Símbolos</h3>
+        <p>Los operadores de Python son como en la mayoria de los lenguajes de programación:</p>
+        <ul>
+            <li>Suma: +</li>
+            <li>Resta: -</li>
+            <li>Multiplicación: *</li>
+            <li>División: /</li>
+            <li>División entera (descarta la parte fraccionaria): //</li>
+            <li>División residual (devuelve el residuo): %</li>
+            <li>Potencia: **</li>
+            <li>Asignación: =</li>
+        </ul>
+        <p>También se puede usar parentesis para agrupar: (2+3)/(4*2)</p>
+        <p>Un string puede ser expresado usando comillas simples ('...') o comillas dobles ("...") teniendo el mismo resultado.Si dentro del string hay 
+            una comilla se puede usar "\" para saltarla. Ejemplo:
+        </p>
+        <pre>
+>>> 'doesn\'t'  # use \' to escape the single quote...
+"doesn't"
+        </pre>
+        <p>Los strings se pueden concatenar (con el signo +) y repetidas (con el signo *). También, si dos strings se escriben uno al lado del otro, se concatenan automaticamente:</p>
+        <pre>
+>>> 'Py' 'thon'
+'Python'
+        </pre>
+        <p>Esto es util cuando se tienen strings muy largos, lo cual facilita la lectura y la escritura del mismo en el codigo</p>
+        <h3>Variables</h3>
+        <p>No es necesario declarar el tipo de dato que guardará la variable. Tampoco es necesario declarar la variable (como en C o JAVA), solo se asigna. Ejemplo: </p>
+        <pre>
+>>> numero = 2
+>>> print(numero)
+2
+>>> numero = 2 + 2
+>>> print(numero)
+4
+>>> 
+        </pre>
+        <h3>Sentencias de control</h3>
+        <h4>If - else, elif</h4>
+        <p>En Python, se utiliza la sentencia if de la siguiente manera: </p>
+        <pre>
+numero = int(input("Introduce un numero: "))
+if numero < 0:
+    print("El numero es negativo")
+elif numero == 0:
+    print("El numero es un cero")
+else:
+    print("El numero es positivo")
+        </pre>
+        <img class="ventana-ejecucion-img" src="../../img/ejemplo1Python.png"/>
+        <h4>For</h4>
+        <p>La sentencia "for" se utiliza de manera diferente que en C o JAVA. Se utiliza de manera similar a Ruby o a la intrucción "foreach" de lenguajes como C#</p>
+        <pre>
+for numero in range(5):
+    print(numero)
+        </pre>
+        <img class="ventana-ejecucion-img" src="../../img/ejemplo2Python.png"/>
+        <h4>While</h4>
+        <p>La sentencia while es similar a la mayoria de los lenguajes de programación</p>
+        <pre>
+numero = int(input("Ingrese un numero: "))
+while numero > 0:
+    print(numero)
+    numero = numero - 1
+        </pre>
+        <img class="ventana-ejecucion-img" src="../../img/whilePython.png"/>
+        <p style="color:red">NOTA: La INDETACION es muy importante en Python. Sirve para definir los bloques de codigo, así como lo que hacen las llaves en C.</p>
+        <p>Para mas información, lea la <a href="https://docs.python.org/3/">documentación de Python</a>.</p>
+        <h2>Descargando Python</h2>
+        <p>Python está disponible para las tres principales plataformas: Windows, GNU/Linux y MacOS/MacOS X.</p>
+        <p>Es necesario ir al <a target="_blank" href="https://www.python.org/downloads/">centro de descargas</a> de Python y descargar una de las versiones. Hay que saber cual versión utilizamos, porque si se presentan cambios.</p>
+        <p>En GNU/Linux ya viene integrado, pero probablemente no sea la versión más actualizada.</p>
+        <h2>¿Qué editor de texto/IDE se puede utilizar?</h2>
+        <p>En realidad se puede utilizar cualquier editor de texto plano (incluso bloc de notas de Windows), pero se puede optar por algo más serio como <a href="http://ninja-ide.org/">NINJA-IDE</a>, que es un entorno de desarrollo exclusivo para Python.</p>
+        <p>Python también incluye un interprete en vivo, que permite escribir ordenes y ver los resultados en ese momento.</p>
+        <img class="ventana-ejecucion-img" src="../../img/interprete_Python.png"/>
+        <h2>Un ejemplo de un programa en Python</h2>
+        <pre>
+<span class="codigo-comentarios"># Python 3: Fibonacci series up to n</span>
+<span class="codigo-palabra-reservada">def</span> <span class="codigo-nombre-funcion">fib</span>(n):
+    a, b = 0, 1
+    <span class="codigo-palabra-reservada">while</span> a < n:
+        <span class="codigo-funcion">print</span>(a, end=' ')
+        a, b = b, a+b
+        <span class="codigo-funcion">print</span>()
+fib(1000)   
+        </pre>
+        <p>Este pequeño programa fue tomado del <a target="_blank" href="https://www.python.org/">sitio de Python</a>.</p>
+        <img src="../../img/ejecucion-serie-fibonacci-python.png" class="ventana-ejecucion-img"/>
+    </article>
+    <section class="izq">
+        <a href="tarea_3.html">Ir a tarea 3</a>
+    </section>
+    <section class="der">
+        <a href="tarea_5.html">Ir a tarea 5</a>
+    </section>
+    <script src="../../JavaScript/script.js"></script>
+</body>
+
+</html>

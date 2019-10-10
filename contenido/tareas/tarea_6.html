@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarea 6 - Proyecto Lenguajes de Programación</title>
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto de Lenguajes de Programación: <span class="sub">Tareas</span></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="../../index.html">Inicio</a></li>
+            <li><a class="nav-item" href="../../personal.html">Paginas personales</a></li>
+            <li><a class="activo nav-item" href="#">Tareas</a></li>
+        </ul>
+    </nav>
+    <aside id="izq">
+        <ul id="lista">
+            <li>
+                <li><a id="aparece1" onclick="aparecer('tareas-1','aparece1')" href="#">[+] Tareas Medio Curso</a></li>
+                <ul class="tareas" id="tareas-1">
+                    <li><a href="tarea_1.html">Tarea 1: Paradigmas de programación</a></li>
+                    <li><a href="tarea_2.html">Tarea 2: Lenguajes de programación</a></li>
+                    <li><a href="tarea_3.html">Tarea 3: Lenguaje Prolog</a></li>
+                    <li><a href="tarea_4.html">Tarea 4: Lenguaje Python</a></li>
+                    <li><a href="tarea_5.html">Tarea 5: Lenguaje Scheme</a></li>
+                    <li><a href="tarea_6.html">Tarea 6: Lenguaje Haskell</a></li>
+                    <li><a href="tarea_7.html">Tarea 7: Lenguaje R</a></li>
+                </ul>
+            </li>
+            <li>
+                <li><a id="aparece2" href="#" onclick="aparecer('tareas-2','aparece2')" class="aparecedor">[+] Tareas Ordinario</a></li>
+                <ul class="tareas" id="tareas-2">
+                    <li><a href="tarea_8.html">Tarea 8</a></li>
+                    <li><a href="tarea_9.html">Tarea 9</a></li>
+                    <li><a href="tarea_10.html">Tarea 10</a></li>
+                    <li><a href="tarea_11.html">Tarea 11</a></li>
+                    <li><a href="tarea_12.html">Tarea 12</a></li>
+                    <li><a href="tarea_13.html">Tarea 13</a></li>
+                    <li><a href="tarea_14.html">Tarea 14</a></li>
+                    <li><a href="tarea_15.html">Tarea 15</a></li>
+                    <li><a href="tarea_16.html">Tarea 16</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <article>
+        <section class="izq">
+            <a href="tarea_5.html">Ir a tarea 5</a>
+        </section>
+        <section class="der">
+            <a href="tarea_7.html">Ir a tarea 7</a>
+        </section>
+        <h1>Lenguaje Haskell</h1>
+        <img src="../../img/haskell-logo.svg">
+        <p>
+            Haskell es un lenguaje de programación moderno, estándar, no estricto y puramente funcional. 
+            Proporciona todas las características esbozadas anteriormente, incluyendo tipificación 
+            polimórfica, evaluación perezosa y funciones de orden superior. También tiene un sistema 
+            de tipo innovador que soporta una forma sistemática de sobrecarga y un sistema de módulos.
+        </p>
+        <p>
+            Está diseñado específicamente para manejar una amplia gama de aplicaciones, desde numéricas 
+            hasta simbólicas. Para este fin, Haskell tiene una sintaxis expresiva y una rica variedad de 
+            tipos de datos incorporados, que incluyen enteros y racionales de precisión arbitraria, así 
+            como los tipos enteros, de punto flotante y booleanos más convencionales.
+        </p>
+        <p>Obtenido de: <a href="https://wiki.haskell.org/Introduction">https://wiki.haskell.org/Introduction</a></p>
+        <h2>Sintaxis</h2>
+        <p>
+            En el interprete de Haskell (también hay compilador) se pueden introducir expresiones matemáticas directamente,
+            obteniendo un resultado inmediato.
+        </p>
+        <p>
+            Las cadenas de texto se ponen entre comillas y se usa "++" para concatenar.
+        </p>
+        <p>
+            Las funciones se llaman sin paréntesis.
+        </p>
+        <img src="../../img/haskell-operaciones-basicas">
+        <h2>Tipos de datos</h2>
+        <p>
+            Los tipos de datos son asignados de manera automática. Si se desea, se puede usar "::"
+        </p>
+        <pre>
+5 :: Double
+        </pre>
+        <img src="../../img/datos-simples-haskell.png">
+        <p>Existen cinco tipos de datos en Haskell:</p>
+        <ul>
+            <li>Int: es un entero con al menos 30 bits de precisión. </li>
+            <li>Integer: un entero con precisión infinita.</li>
+            <li>Float: un numero de punto flotante de precisión simple.</li>
+            <li>Double: es un numero de punto flotante de precisión doble.</li>
+            <li>Rational: es un tipo fraccionario, sin error de redondeo.</li>
+        </ul>
+        <p>Además, existe el "()" que significa unidad. Es equivalente al void de los lenguajes derivados de C.</p>
+        <h3>Datos estructurados</h3>
+        <p>
+            Se tienen las listas y las tuplas. Las tuplas van entre (paréntesis) y las listas van entre [corchetes]. 
+            Las listas mantienen multiples valores del mismo tipo y las tuplas un numero fijo de valores y de 
+            diferentes tipos.
+        </p>
+        <pre>
+Prelude> [1, 2, 3]
+[1,2,3]
+Prelude> [1 .. 5]
+[1,2,3,4,5]
+Prelude> [1, 3 .. 10]
+[1,3,5,7,9]
+Prelude> [True, False, True]
+[True,False,True]
+        </pre>
+        <pre>
+Prelude> (1, True)
+(1,True)
+        </pre>
+        <h2>¿Qué se necesita para comenzar en Haskell</h2>
+        <p>Se necesita un editor de texto y un compilador de Haskell. Se puede instalar "Haskell Platform" y desde la consola utilizar el compilador. También hay varios IDEs disponibles. Referirse a: <a href="https://www.haskell.org/downloads">https://www.haskell.org/downloads</a> para más información.</p>
+        <h2>Instalando Haskell Platform en Ubuntu</h2>
+        <p>Me decidí por instalar Haskell Platform. Para ello se descarga la versión disponible en el repositorio oficial de la distribución. Para ello se ejecuta lo siguiente en la terminal:</p>
+        <pre>
+sudo apt-get install haskell-platform
+        </pre>
+        <h2>Un ejemplo sencillo en Haskell</h2>
+        <p>El programa pregunta cual es el factorial de 5 (es 120). Si el usuario responde correctamente le dice que está correcto, y en caso contrario.</p>
+        <pre>
+module Main where
+factorial n = if n == 0 then 1 else n * factorial (n - 1)
+
+main = do putStrLn "What is 5! ?"
+          x <- readLn
+          if x == factorial 5
+              then putStrLn "You're right!"
+              else putStrLn "You're wrong!"    
+        </pre>
+        <img src="../../img/ejemplo-haskell">
+        <p>En la imagen se muestra cómo se compila un archivo y como se ejecuta (en Windows genera un .exe)</p>
+        <p>Información consultada en : <a href="https://wiki.haskell.org/Aprende_Haskell_en_10_minutos">https://wiki.haskell.org/Aprende_Haskell_en_10_minutos</a></p>
+        <p>Las imagenes son capturas hechas por mí.</p>
+    </article>
+    <section class="izq">
+        <a href="tarea_5.html">Ir a tarea 5</a>
+    </section>
+    <section class="der">
+        <a href="tarea_7.html">Ir a tarea 7</a>
+    </section>
+    <script src="../../JavaScript/script.js"></script>
+</body>
+
+</html>

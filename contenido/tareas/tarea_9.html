@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tarea 9 - Proyecto Lenguajes de Programación</title>
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto de Lenguajes de Programación: <span class="sub">Tareas</span></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="nav-item" href="../../index.html">Inicio</a></li>
+            <li><a class="nav-item" href="../../personal.html">Paginas personales</a></li>
+            <li><a class="activo nav-item" href="#">Tareas</a></li>
+        </ul>
+    </nav>
+    <aside id="izq">
+        <ul id="lista">
+            <li>
+                <li><a id="aparece1" onclick="aparecer('tareas-1','aparece1')" href="#">[+] Tareas Medio Curso</a></li>
+                <ul class="tareas" id="tareas-1">
+                    <li><a href="tarea_1.html">Tarea 1: Paradigmas de programación</a></li>
+                    <li><a href="tarea_2.html">Tarea 2: Lenguajes de programación</a></li>
+                    <li><a href="tarea_3.html">Tarea 3: Lenguaje Prolog</a></li>
+                    <li><a href="tarea_4.html">Tarea 4: Lenguaje Python</a></li>
+                    <li><a href="tarea_5.html">Tarea 5: Lenguaje Scheme</a></li>
+                    <li><a href="tarea_6.html">Tarea 6: Lenguaje Haskell</a></li>
+                    <li><a href="tarea_7.html">Tarea 7: Lenguaje R</a></li>
+                </ul>
+            </li>
+            <li>
+                <li><a id="aparece2" href="#" onclick="aparecer('tareas-2','aparece2')" class="aparecedor">[+] Tareas Ordinario</a></li>
+                <ul class="tareas" id="tareas-2">
+                    <li><a href="tarea_8.html">Tarea 8</a></li>
+                    <li><a href="tarea_9.html">Tarea 9</a></li>
+                    <li><a href="tarea_10.html">Tarea 10</a></li>
+                    <li><a href="tarea_11.html">Tarea 11</a></li>
+                    <li><a href="tarea_12.html">Tarea 12</a></li>
+                    <li><a href="tarea_13.html">Tarea 13</a></li>
+                    <li><a href="tarea_14.html">Tarea 14</a></li>
+                    <li><a href="tarea_15.html">Tarea 15</a></li>
+                    <li><a href="tarea_16.html">Tarea 16</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <article>
+        <section class="izq">
+            <a href="tarea_8.html">Ir a tarea 8</a>
+        </section>
+        <section class="der">
+            <a href="tarea_10.html">Ir a tarea 10</a>
+        </section>
+        <h1>Tarea 9</h1>
+        <p>Elabore un programa en JAVA y Ruby que a traves de un Menú de opciones permita convertir de pesos a las siguientes monedas:</p>
+        <ul>
+            <li>Dólar</li>
+            <li>Euro</li>
+            <li>Yen (Japonés)</li>
+            <li>Dolar de Hong Kong</li>
+        </ul>
+        <h2>JAVA</h2>
+        <pre>
+/*
+Tarea 9
+Convertidor de monedas
+Estudiante: Erik Everardo Cavazos Hernández
+Matrícula: 1811290
+Clase: Lenguajes de Programación V4-V6 Jueves
+Docente: Ismael Pimentel
+*/
+import javax.swing.JOptionPane;
+
+public class tarea9{
+    public static void main(String[] args){
+        //definicion de constantes (1 peso en...)
+        final float dolar = 0.050f;
+        final float euro = 0.044f;
+        final float yen = 5.65f;
+        final float dolarHK = 0.39f;
+
+        //strings de botones
+        String[] opciones = {"Dolar estadounidense", "Euro", "Yen (japones)", "Dolar HK"};
+        String[] opcionesSalir = {"Si", "No"};
+        float resultado;
+        int salir;
+
+        do{
+            float entrada = Float.parseFloat(JOptionPane.showInputDialog(null,"Introducir valor en pesos mexicanos"));
+            int accion = JOptionPane.showOptionDialog(
+                null, 
+                "Convertir " + entrada + " pesos a...", 
+                "Convertir a", 
+                JOptionPane.YES_NO_CANCEL_OPTION, 
+                JOptionPane.INFORMATION_MESSAGE, 
+                null, 
+                opciones, 
+                opciones[0]
+                );
+            switch(accion){
+                case 0: 
+                    resultado = entrada * dolar;
+                    JOptionPane.showMessageDialog(null,entrada + " pesos equivale a " + resultado + " dolares");
+                    historial.add(entrada + " pesos equivale a " + resultado + " dolares");
+                    break;
+                case 1: 
+                    resultado = entrada * euro;
+                    JOptionPane.showMessageDialog(null,entrada + " pesos equivale a " + resultado + " euros");
+                    historial.add(entrada + " pesos equivale a " + resultado + " dolares");
+                    break;
+                case 2: 
+                    resultado = entrada * yen;
+                    JOptionPane.showMessageDialog(null,entrada + " pesos equivale a " + resultado + " yenes japonenes");
+                    historial.add(entrada + " pesos equivale a " + resultado + " dolares");
+                    break;
+                case 3: 
+                    resultado = entrada * dolarHK;
+                    JOptionPane.showMessageDialog(null,entrada + " pesos equivale a " + resultado + " dolares de Hong Kong");
+                    historial.add(entrada + " pesos equivale a " + resultado + " dolares");
+                    break;
+            }
+            salir = JOptionPane.showOptionDialog(null,"Desea realizar otra conversion?", "Realizar otra operacion", JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE,null, opcionesSalir,opcionesSalir[0]);
+        }while(salir == 0);
+    }
+}
+        </pre>
+        <h2>Ruby</h2>
+        <pre>
+#Tarea 9
+#Convertidor de divisas
+#Nombre: Erik Everardo Cavazos Hernandez
+#Matrícula: 1811290
+#Clase: Lenguajes de programación V4-V6 Jueves
+#Docente: Ismael Pimentel
+DOLAR = 0.050
+EURO = 0.044
+YEN = 5.65
+DOLARHK = 0.39
+
+begin
+    puts "Convertir pesos a:"
+    puts "1. Dolar"
+    puts "2. Euro"
+    puts "3. Yen Japones"
+    puts "4. Dolar Hong Kong"
+    print "=>"
+    accion = gets().to_i
+    print "Convertir: "
+    entrada = gets().to_f
+    case accion
+    when 1 then 
+        resultado = entrada * DOLAR
+        puts "#{entrada} pesos es #{resultado} dolares"
+    when 2 then 
+        resultado = entrada * EURO
+        puts "#{entrada} pesos es #{resultado} euros"
+    when 3 then 
+        resultado = entrada * YEN
+        puts "#{entrada} pesos es #{resultado} yenes"
+    when 4 then 
+        resultado = entrada * DOLARHK
+        puts "#{entrada} pesos es #{resultado} dolares de Hong Kong"
+    else puts "Error"
+    end
+    print "Desea realizar otra conversión? (1. si 2. no): "
+    si_no = gets()
+end while si_no == 1
+        </pre>
+    </article>
+    <section class="izq">
+        <a href="tarea_8.html">Ir a tarea 8</a>
+    </section>
+    <section class="der">
+        <a href="tarea_10.html">Ir a tarea 10</a>
+    </section>
+    <script src="../../JavaScript/script.js"></script>
+</body>
+
+</html>
